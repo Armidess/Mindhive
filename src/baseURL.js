@@ -1,4 +1,4 @@
-const baseURL = "https://www.armides.duckdns.org/mindhive/api";
+const baseURL = "https://armides.duckdns.org/mindhive/api";
 
 // const baseURL = "http://www.localhost:8000/mindhive/api";
 
