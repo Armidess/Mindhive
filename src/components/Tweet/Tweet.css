@@ -1,0 +1,318 @@
+/* Tweet.css - HIVE MIND Design */
+
+.tweet-component {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.tweet-component:hover {
+  background: rgba(255, 255, 255, 0.95);
+  transform: translateY(-1px);
+}
+
+.tweet-component::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #a3e635, #22c55e, #84cc16);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.tweet-component:hover::before {
+  opacity: 1;
+}
+
+/* Header Section */
+.tweet-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.user-avatar {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  position: relative;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #a3e635, #22c55e);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(163, 230, 53, 0.3);
+  transition: all 0.3s ease;
+}
+
+.avatar-placeholder:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(163, 230, 53, 0.4);
+}
+
+.user-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.username-link {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.username-link:hover {
+  color: #22c55e;
+}
+
+.display-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0;
+  line-height: 1.4;
+  transition: color 0.2s ease;
+}
+
+.username-link:hover .display-name {
+  color: #22c55e;
+}
+
+.user-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 2px;
+}
+
+.handle {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.separator {
+  color: #d1d5db;
+  font-size: 14px;
+}
+
+.timestamp {
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Tweet Content */
+.tweet-content {
+  margin-bottom: 16px;
+  padding-left: 60px;
+}
+
+.tweet-text {
+  color: #1f2937;
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0;
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+/* Actions Bar */
+.tweet-actions {
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  padding-top: 8px;
+  border-top: 1px solid #f3f4f6;
+  margin-top: 12px;
+}
+
+.like-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: all 0.2s ease;
+  font-size: 14px;
+  font-weight: 500;
+  color: #6b7280;
+  position: relative;
+  overflow: hidden;
+}
+
+.like-button:hover {
+  background: rgba(163, 230, 53, 0.1);
+  color: #22c55e;
+}
+
+.like-button.liked {
+  color: #ef4444;
+}
+
+.like-button.liked:hover {
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.like-button.loading {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.like-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.like-icon {
+  font-size: 18px !important;
+  transition: all 0.2s ease;
+}
+
+.like-icon.filled {
+  color: #ef4444;
+  animation: likeAnimation 0.3s ease;
+}
+
+.like-button:hover .like-icon {
+  transform: scale(1.1);
+}
+
+.like-count {
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.action-spacer {
+  flex: 1;
+}
+
+.tweet-engagement {
+  display: flex;
+  align-items: center;
+}
+
+.engagement-text {
+  font-size: 13px;
+  color: #9ca3af;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes likeAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Like button ripple effect */
+.like-button::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(163, 230, 53, 0.3);
+  transform: translate(-50%, -50%);
+  transition: all 0.3s ease;
+}
+
+.like-button:active::after {
+  width: 100px;
+  height: 100px;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+  .tweet-content {
+    padding-left: 0;
+    margin-top: 12px;
+  }
+  
+  .tweet-actions {
+    padding-left: 0;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .avatar-placeholder {
+    font-size: 16px;
+  }
+  
+  .display-name {
+    font-size: 15px;
+  }
+  
+  .tweet-text {
+    font-size: 14px;
+  }
+}
+
+/* Loading state for like button */
+.like-button.loading .like-icon {
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Hover effects for better UX */
+.tweet-component:hover .avatar-placeholder {
+  box-shadow: 0 6px 20px rgba(163, 230, 53, 0.4);
+}
+
+.tweet-component:hover .timestamp {
+  color: #22c55e;
+}
+
+/* Focus states for accessibility */
+.like-button:focus {
+  outline: 2px solid #a3e635;
+  outline-offset: 2px;
+}
+
+.username-link:focus {
+  outline: 2px solid #a3e635;
+  outline-offset: 2px;
+  border-radius: 4px;
+}

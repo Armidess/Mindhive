@@ -1,0 +1,174 @@
+/* Error.css */
+.error-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Arial', sans-serif;
+}
+
+.error-content {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0 20px;
+}
+
+/* Logo Section */
+.logo-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-circle {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #a4d65e, #7fb842);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 50px rgba(164, 214, 94, 0.3);
+  position: relative;
+}
+
+.logo-circle::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, rgba(164, 214, 94, 0.2), transparent);
+  z-index: -1;
+}
+
+.welcome-text {
+  font-size: 24px;
+  color: #666;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.hive-mind-text {
+  font-size: 42px;
+  color: #333;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Error Section */
+.error-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error-box {
+  background: white;
+  border: 2px solid #a4d65e;
+  border-radius: 12px;
+  padding: 50px 40px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  min-width: 350px;
+}
+
+.error-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.error-message {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.error-divider {
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  color: #999;
+}
+
+.error-divider::before,
+.error-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: #ddd;
+}
+
+.error-divider span {
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+.login-button {
+  background: #a4d65e;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease;
+  min-width: 120px;
+}
+
+.login-button:hover {
+  background: #7fb842;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(164, 214, 94, 0.4);
+}
+
+.login-button:active {
+  transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .error-content {
+    flex-direction: column;
+    gap: 50px;
+    padding: 40px 20px;
+  }
+  
+  .logo-circle {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .welcome-text {
+    font-size: 18px;
+  }
+  
+  .hive-mind-text {
+    font-size: 28px;
+  }
+  
+  .error-box {
+    padding: 40px 30px;
+    min-width: 280px;
+  }
+  
+  .error-title {
+    font-size: 24px;
+  }
+}

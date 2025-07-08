@@ -1,0 +1,469 @@
+/* Profile Container */
+.profile-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f0f4f0 0%, #e8f5e8 100%);
+  position: relative;
+  overflow-x: hidden;
+}
+
+.profile-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(139, 195, 74, 0.1) 0%, transparent 70%);
+  animation: float 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* Layout */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr 320px;
+  gap: 20px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Sidebar Sections */
+.left-sidebar-section,
+.right-sidebar-section {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 195, 74, 0.2);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+  transition: all 0.3s ease;
+}
+
+.left-sidebar-section:hover,
+.right-sidebar-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Main Content Section */
+.main-content-section {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(139, 195, 74, 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.main-content-section:hover {
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Profile Header */
+.profile-header {
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: white;
+  padding: 30px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-header::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+  animation: rotate 10s linear infinite;
+}
+
+.profile-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.profile-subtitle {
+  font-size: 16px;
+  margin: 0;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+  font-weight: 400;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 0;
+}
+
+/* Loading State */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid rgba(139, 195, 74, 0.3);
+  border-top: 4px solid #8bc34a;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-text {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+}
+
+/* Profile Info Card */
+.profile-info-card {
+  background: white;
+  padding: 30px;
+  border-bottom: 1px solid rgba(139, 195, 74, 0.2);
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.profile-avatar-section {
+  flex-shrink: 0;
+}
+
+.profile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #8bc34a;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.05);
+}
+
+.profile-details {
+  flex: 1;
+  min-width: 200px;
+}
+
+.profile-username {
+  font-size: 24px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 5px 0;
+}
+
+.profile-email {
+  font-size: 14px;
+  color: #6b7280;
+  margin: 0 0 15px 0;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 30px;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #8bc34a;
+  display: block;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: #6b7280;
+  text-transform: uppercase;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.profile-actions {
+  flex-shrink: 0;
+}
+
+.profile-button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.edit-button {
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+}
+
+.edit-button:hover {
+  background: linear-gradient(135deg, #689f38 0%, #558b2f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+}
+
+.follow-button {
+  background: linear-gradient(135deg, #8bc34a 0%, #689f38 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(139, 195, 74, 0.3);
+}
+
+.follow-button:hover {
+  background: linear-gradient(135deg, #689f38 0%, #558b2f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 195, 74, 0.4);
+}
+
+.following-button {
+  background: linear-gradient(135deg, #e5e7eb 0%, #d1d5db 100%);
+  color: #374151;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.following-button:hover {
+  background: linear-gradient(135deg, #fca5a5 0%, #ef4444 100%);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(239, 68, 68, 0.4);
+}
+
+.following-button:hover::after {
+  content: 'Unfollow';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: inherit;
+}
+
+/* Tweets Section */
+.tweets-section {
+  padding: 30px;
+}
+
+.tweets-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(139, 195, 74, 0.2);
+}
+
+.tweets-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tweet-item {
+  background: rgba(245, 245, 245, 0.5);
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid rgba(139, 195, 74, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tweet-item:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.no-tweets {
+  text-align: center;
+  padding: 60px 20px;
+  background: rgba(245, 245, 245, 0.5);
+  border-radius: 12px;
+  border: 2px dashed rgba(139, 195, 74, 0.3);
+}
+
+.no-tweets-text {
+  color: #6b7280;
+  font-size: 16px;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.profile-container {
+  animation: fadeIn 0.8s ease-out;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .profile-layout {
+    grid-template-columns: 250px 1fr 280px;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .left-sidebar-section,
+  .right-sidebar-section {
+    position: static;
+    order: 2;
+  }
+  
+  .main-content-section {
+    order: 1;
+  }
+  
+  .profile-info-card {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .profile-stats {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-layout {
+    padding: 15px;
+    gap: 15px;
+  }
+  
+  .profile-header {
+    padding: 20px;
+  }
+  
+  .profile-title {
+    font-size: 24px;
+  }
+  
+  .profile-info-card {
+    padding: 20px;
+  }
+  
+  .profile-avatar {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .profile-stats {
+    gap: 20px;
+  }
+  
+  .tweets-section {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-layout {
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .profile-header {
+    padding: 15px;
+  }
+  
+  .profile-title {
+    font-size: 20px;
+  }
+  
+  .profile-info-card {
+    padding: 15px;
+  }
+  
+  .profile-stats {
+    gap: 15px;
+  }
+  
+  .profile-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .tweets-section {
+    padding: 15px;
+  }
+}
