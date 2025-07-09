@@ -106,7 +106,7 @@ const Tweet = ({ tweet, setData }) => {
 					{/* Actions bar */}
 					<div className="tweet-actions">
 						<button 
-							// onClick={handleLike} 
+							onClick={handleLike} 
 							className={`like-button ${tweet.likes.includes(currentUser._id) ? 'liked' : ''} ${isLiking ? 'loading' : ''}`}
 							disabled={isLiking}
 						>

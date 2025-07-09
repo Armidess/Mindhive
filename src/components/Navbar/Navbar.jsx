@@ -32,7 +32,7 @@ const Navbar = () => {
 		<div className="navbar">
 			<div className="logo-section">
 				<div className="logo">
-					<span className="logo-text">HM</span>
+					<span className="logo-text">MH</span>
 				</div>
 			</div>
 
