@@ -4,7 +4,9 @@
   position: fixed;
   top: 60px; /* Adjust based on your header height */
   left: 0;
-  height: calc(100vh - 60px);
+  /* height: calc(100vh - 60px);
+   */
+   height : 80vh;
   width: 280px;
   background: linear-gradient(135deg, #f8fffe 0%, #f0f9f0 100%);
   border-right: 2px solid #e8f5e8;

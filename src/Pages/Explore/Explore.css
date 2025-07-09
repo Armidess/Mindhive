@@ -3,6 +3,7 @@
   background: linear-gradient(135deg, #f0f4f0 0%, #e8f5e8 100%);
   position: relative;
   overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .explore-container::before {

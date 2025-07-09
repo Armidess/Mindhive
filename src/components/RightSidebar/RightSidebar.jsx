@@ -55,6 +55,7 @@ const RightSidebar = () => {
 					<div className="trending-list">
 						{trendsToShow.length > 0 ? (
 							trendsToShow.map((TrendingTag, index) => (
+								<>
 								<div
 									key={TrendingTag._id}
 									className="trending-item"
@@ -66,7 +67,7 @@ const RightSidebar = () => {
 									<span className="trending-hash">#</span>
 									<span className="trending-text">{TrendingTag.tagName}</span>
 									<span className="trending-rank">{index + 1}</span>
-								</div>
+								</div></>
 							))
 						) : (
 							<div className="no-trends">
